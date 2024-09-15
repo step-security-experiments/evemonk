@@ -58,7 +58,27 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@int-sh
         with:
-          egress-policy: audit
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            accounts.google.com:443
+            content-autofill.googleapis.com:443
+            fonts.googleapis.com:443
+            fonts.gstatic.com:443
+            ga.jspm.io:443
+            github.com:443
+            googlechromelabs.github.io:443
+            imageproxy.evemonk.com:443
+            index.rubygems.org:443
+            objects.githubusercontent.com:443
+            optimizationguide-pa.googleapis.com:443
+            plausible.io:443
+            *.gvt1.com:443
+            redirector.gvt1.com:443
+            rubygems.org:443
+            s3.amazonaws.com:443
+            www.googleapis.com:443
+
 
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Set up Ruby
