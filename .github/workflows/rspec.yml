@@ -56,7 +56,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@int-sh
+        uses: step-security/harden-runner@668ad3cce4bd0191ec8fdd9868adcb7521a9dacd # int-sh
         with:
           disable-sudo: true
           egress-policy: block
